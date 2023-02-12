@@ -1,0 +1,80 @@
+<header>
+
+	<!--- Navbar --->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+            <a href="/" class="navbar-brand" style="color: rgb(200, 196, 60)
+            ;"> <i class="fi-xwluxl-engine-wide " style="color: orange;"></i> Turo Service</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="nvbCollapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/"><i class="fa fa-home fa-fw mr-1"></i>Home</a>
+					</li>
+					<li class="nav-item active pl-1">
+						<a class="nav-link" href="/products"><i class="fa fa-th-list fa-fw mr-1"></i>Products</a>
+					</li>
+					
+				</ul>
+				<% if (isAdmin || isModerator) { %>
+
+                    <ul class="navbar-nav ms-auto">
+
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/admin/products"><i class="fa-solid fa-lock"></i> A PR</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/admin/product/create"><i class="fa-solid fa-plus"></i> Add PR</a>
+					</li>
+					</ul>
+					<% } %>
+
+
+					<% if (isAdmin) { %>
+					 
+                    <ul class="navbar-nav ms-auto">
+
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/admin/categories"><i class="fa-solid fa-lock"></i> A CT</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/admin/category/create"><i class="fa-solid fa-plus"></i> Add CT</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/admin/roles"><i class="fa-solid fa-plus"></i>Roles</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="/admin/users"><i class="fa-solid fa-plus"></i>Users</a>
+					</li>
+
+					</ul>
+					<% } %>
+                    <ul class="navbar-nav ms-auto">
+
+                        
+                        <% if (isAuth) { %>
+                    <li class="nav-item pl-1">
+                            <a class="nav-link" href="/account/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    </li>
+                     <% } else { %>
+                    <li class="nav-item pl-1">
+                            <a class="nav-link" href="/account/register"><i class="fa fa-user-plus fa-fw mr-1"></i> Register</a>
+                    </li>
+                    <li class="nav-item pl-1">
+                        <a class="nav-link" href="/account/login"><i class="fa-solid fa-user"></i> Login</a>
+                    </li>
+                        <% } %>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--# Navbar #-->
+	</header>
+
+    <!-- <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fa-solid fa-magnifying-glass"></label>
+    </form> -->

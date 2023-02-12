@@ -1,0 +1,8 @@
+<div class="list-group">
+    <a href="/products" class="list-group-item list-group-item-action">Bütün Məhsullar</a>
+    <% categories.forEach(category => { %>                          
+      <a href="/products/category/<%=  category.url %>"
+        class="list-group-item list-group-item-action <%= selectedCategory==category.url ?'active' :''%>">
+        <%= category.ad %> </a>
+  <% }) %>
+</div>

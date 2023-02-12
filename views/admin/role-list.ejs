@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include("../partials/head.ejs")  %> 
+    </head>
+<body>
+
+    <!-- header section start -->
+    <%- include("../partials/header.ejs")  %> 
+<!-- header end -->
+
+
+    <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th style="width: 50px;">id</th>
+              <th style=" width:150px;">rolename</th>
+              <th>istifadeci sayi</th>
+              <th style="width: 50px;"></th>
+              <th style="width: 50px;"></th>
+            </tr>
+            <tbody>
+              <tr>
+                <% roles.forEach(role => { %>
+                 <tr>
+                    <td><%= role.id %> </td>
+                    <td><%= role.rolename %></td>  
+                    <td><%= role.user_count %></td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="/admin/role/delete/<%= role.id %>">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="/admin/roles/<%= role.id %>">Edit</a>
+                    </td>
+                </tr>
+                <% }) %>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
+      </div>
+    </div>
+    </div>
+
+
+
+        <script>
+
+let searchForm=document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');
+}
+        </script>
+
+</body>
+
+</html>

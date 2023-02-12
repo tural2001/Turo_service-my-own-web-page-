@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include("../partials/head.ejs")  %> 
+    </head>
+<body>
+
+    <!-- header section start -->
+    <%- include("../partials/header.ejs")  %> 
+<!-- header end -->
+
+
+
+
+    <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <% if (action != "undefined" && action=="edit") { %>
+          <div class="alert alert-success">
+           <%= categoryid %> id N kategoriya guncellendi
+          </div>
+        <% } %>
+        <% if (action != "undefined" && action=="delete") { %>
+          <div class="alert alert-danger">
+            kategoriya silindi
+          </div>
+        <% } %>
+        <% if (action != "undefined" && action=="create") { %>
+          <div class="alert alert-success">
+            kategoriya quruldu
+          </div>
+        <% } %>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th style="width: 150px;">id</th>
+              <th style="width: 1000px;">ad</th>
+              <th style="width: 50px;"></th>
+              <th></th>
+            </tr>
+            <tbody>
+              <tr>
+                <% categories.forEach(category => { %>
+                 <tr>
+                    <td><%= category.id %></td>
+                    <td><%= category.ad %></td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="/admin/category/delete/<%= category.id %>">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="/admin/categories/<%= category.id %>">Edit</a>
+                    </td>
+                </tr>
+                <% }) %>
+              </tr>
+            </tbody>
+          </thead>
+        </table>
+      </div>
+    </div>
+    </div>
+
+
+
+        <script>
+
+let searchForm=document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');
+}
+        </script>
+
+</body>
+
+</html>

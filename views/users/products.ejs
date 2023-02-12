@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include("../partials/head.ejs")  %> 
+    </head>
+<body>
+
+    <!-- header section start -->
+    <%- include("../partials/header.ejs")  %> 
+<!-- header end -->
+      
+
+            
+      <section class="product">
+          <div  class="container mt-3">
+              <div class="row">
+                  <div  id="col-1" class="col-3">
+                      <div class="list" style="font-size: 1.1rem;">
+                        
+                        <%- include("../partials/category-menu.ejs")  %> 
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="cards">
+                        
+                        <% if (products.length==0) { %>
+                            <%- include("../partials/no-product")  %> 
+                            <% } %>
+                            
+                            <% products.forEach(product => { %>     
+                                <%- include("../partials/product-card", product)  %> 
+                                <% }) %>  
+                                
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            
+            
+            <%- include("../partials/pagination.ejs")  %> 
+            
+            
+            //footer
+            <%- include("../partials/footer.ejs")  %> 
+            
+
+            <script>
+                
+let searchForm=document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');
+}
+        </script>
+
+</body>
+
+</html>

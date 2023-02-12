@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include("../partials/head.ejs")  %> 
+    </head>
+<body>
+
+    <!-- header section start -->
+    <%- include("../partials/header.ejs")  %> 
+<!-- header end -->
+
+
+    <div class="container mt-3">
+      <div class="card">
+        <div class="card-body">
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/static/images/<%= product.sekil %> " class="img-fluid"/>
+        </div>
+        <div class="col-md-8">
+          <h1 class="h3 mb-3"><%= product.ad %> </h1>
+          <p><%= product.haqqinda %> </p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+
+        <script>
+
+let searchForm=document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');
+}
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs")  %> 
+
+    </head>
+<body>
+
+    <!-- header section start -->
+   
+    <%- include("../partials/header.ejs")  %> 
+    
+        <!-- header section end -->
+
+        <!-- Reklam -->
+        <section class="home">
+            <div class="reklam-text">
+                <div class="metn">
+                    <h1> Kampaniyadan Yararlanmaga telesin</h1>
+                    <h2>5 <span style="color: rgb(243, 12, 12);">yanvara </span>kimi <span
+                            style="color: rgb(255, 0, 0);">AMS</span><span style="color: rgb(47, 47, 250);">OIL</span>
+                        yaglarinda <span style="color:red" ,font-family="italic">50%</span>dek endirimler <br>
+                    </h2>
+                </div>
+                <a id="button" href="/account/login">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Join Now
+                </a>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h1 class="heading">Bizim <span>Üstünlüklərimiz</span> </h1>
+
+            <div class="box-container">
+
+
+                <div class="card2">
+                    <div class="img"><img src="/static/images/pay.jpg" width="100%"   alt=""></div>
+                    <div class="content">
+                        <h3>Asan Ödəniş</h3>
+                        <p>Sadəcə Təmassız ödə</p>
+                        <a href="#">
+                            <button>Kəşf et</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card2" >
+                    <div class="img"><img src="/static/images/delivery.jpg" width="100%" alt=""></div>
+                    <div class="content">
+                        <h3>Zəmanətli Çatdırma</h3>
+                        <p>Sumqayit daxilinde</p>
+                        <a href="#">
+                            <button>Kəşf et</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card2">
+                    <div class="img"><img src="/static/images/quality.jpg" width="100%"   alt=""></div>
+                    <div class="content">
+                        <h3>Yüksək Keyfiyyət</h3>
+                        <p>Sumqayit daxilinde</p>
+                        <a href="#">
+                            <button>Kəşf et</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        //footer
+      <%- include("../partials/footer.ejs")  %> 
+
+
+
+
+        <script>
+
+let searchForm=document.querySelector('.search-form');
+
+document.querySelector('#search-btn').onclick=()=>{
+    searchForm.classList.toggle('active');
+}
+        </script>
+
+</body>
+
+</html>
