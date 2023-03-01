@@ -1,15 +1,15 @@
-const config={
-    db:{
-        host:"localhost",
-        user:"root",
-        password:"tural123",
-        database:"turodb"
-    },
-    email:{
-        username:"demo64241@gmail.com",
-        password:"otkbmitwmifkjipz",
-        from:"demo64241@gmail.com"
-    }
-}
+const config = {
+  db: {
+    host: 'localhost',
+    user: 'root',
+    password: DB_PASSWORD,
+    database: DB,
+  },
+  email: {
+    username: USERNAME,
+    password: PASSWORD,
+    from: 'demo64241@gmail.com',
+  },
+};
 
-module.exports=config;
+module.exports = config;
