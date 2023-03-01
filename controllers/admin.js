@@ -159,9 +159,9 @@ exports.get_category_create = async (req, res)=> {
 
 exports.post_category_create = async (req,res)=>{
     const ad=req.body.ad;
-
+    const url='wehf';
     try{
-        await Category.create({ad:ad});
+        await Category.create({ad:ad,url:url});
         res.redirect("/admin/categories?action=create");
     }
     catch(err){
@@ -209,6 +209,8 @@ exports.post_product_edit = async (req, res)=> {
     const userid=req.session.userid;
 
 
+
+    const isAdmin=req.session.roles.includes("admin");
 
     let sekil=req.body.sekil;
     

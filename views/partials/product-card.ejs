@@ -1,5 +1,5 @@
 <div class="card">
-  <img src="/static/images/<%= sekil %>"  class="card__image" alt="">
+  <img src="/static/images/<%= sekil ? sekil : 'amsoil.jpeg'%>"  class="card__image" alt="">
   <div class="card-content">
       <h4 class="card-name"><%= ad %></h4>
       <p> <%-  haqqinda %> </p>
@@ -10,7 +10,6 @@
       </div>
       <div>
           <a href="/products/product-detail/<%= url %>" class="card__link">Almaq</a>
-
       </div>
   </div>
 </div> 
